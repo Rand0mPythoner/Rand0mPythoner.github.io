@@ -135,7 +135,8 @@ selenium浏览器类提供了搜索元素的函数，总的来说还是比bs4简
 ```
 我把注释去了，因为没啥可解释的，就是一堆if，execute这个函数是一个动态调用，call到command.FIND_ELEMENT，然后传入了一个字典，最后取value  
 进入FIND_ENELMENT瞅瞅。  
-``` FIND_ELEMENT = "findElement"
+``` Python
+FIND_ELEMENT = "findElement"
 	Command.FIND_ELEMENT: ('POST', '/session/$sessionId/element')
 ```
 发现是个API，看来是我猜错了，还是要看一下execute函数
@@ -150,6 +151,8 @@ def execute(self, command, params):
     url = '%s%s' % (self._url, path)
     return self._request(command_info[0], url, body=data)
 ```
-最后发现还是调用了_request方法，data就是
-```{'using': by,'value': value}```
+最后发现还是调用了_request方法，data就是  
+```
+{'using': by,'value': value}
+```
 原理就分析到这里了，下一章会用一个爬虫来演示selenium怎么使用。
