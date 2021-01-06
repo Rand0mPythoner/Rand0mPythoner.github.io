@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "PWN.kr_input_wp"
-subtitle: "input_writeup"
+title: "BMZCTF-pwn2wp"
+subtitle: "BMZCTF-pwn2wp(ret2libc)"
 author: "Novocaine#p1an0@qq.com"
 header-img: "img/post-bg-dreamer.jpg"
 header-mask: 0.4
