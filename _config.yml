@@ -1,10 +1,10 @@
 # Site settings
-title: P1an0's Blog | Novocaine.
-SEOTitle: P1an0's Blog | Novocaine. 
+title: P1an0's Blog | Rand0m & Novocaine.
+SEOTitle: P1an0's Blog | Rand0m & Novocaine. 
 header-img: img/home-bg.jpg
 email: P1an0@qq.com
-description: "P1an0|Novocaine @KunWu_Lib @DarkEyeTeam "
-keyword: "P1an0"
+description: "忘掉苦难忘记忧伤爱心与我们同在 @KunWu_Lib @DarkEyeTeam "
+keyword: "P1an0 | Rand0m"
 url: "http://Rand0mpythoner.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -13,7 +13,7 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     P1an0到底啥时候逝世
+weibo_username:     你就当p1an0在放屁
 #zhihu_username:     无
 github_username:    Rand0mPythoner
 twitter_username:   P1an0
@@ -78,7 +78,7 @@ ga_domain: github.io
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "我是你哥哥!<br>Father of all the mother fuckers."
+sidebar-about-description: "拥抱和平拥抱欢乐拥抱灿烂的未来<br>Father of all the mother fuckers."
 sidebar-avatar: /img/avatar-hux-ny.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -108,5 +108,8 @@ friends: [
     },{
         title: "Magic_Zer0",
         href: "https://www.cnblogs.com/magic-zero/"
+    },{
+        title: "Ph1th0n",
+        href: "https://www.leavesongs.com/"
     }
 ]
