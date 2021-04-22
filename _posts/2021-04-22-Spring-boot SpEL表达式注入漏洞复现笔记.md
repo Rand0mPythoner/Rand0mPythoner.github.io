@@ -154,7 +154,12 @@ public String resolvePlaceholder(String name) {
 
 这波没有代码diff环节了，这个文件已经不存在于spring-boot中了。。。
 
-0x03 参考文档
+0x05 
+--
+补丁分析：
+SpelView类初始化时this.helper参数用了一个新写的类，那个类没分析，核心概念就是避免递归。
+
+0x06 参考文档
 --
 -  https://www.cnblogs.com/litlife/p/10183137.html
 -  https://github.com/spring-projects/spring-boot
